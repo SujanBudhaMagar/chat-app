@@ -88,7 +88,7 @@ export const logout = async (_, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 };
 
-export const allUsers = async (req, res) => {
+export const allUsers = async (_, res) => {
   try {
     const users = await User.find({}, "_id email fullName profilePic").lean();
     res.status(200).json(users);
@@ -112,7 +112,9 @@ export const updateProfile = async (req, res) => {
       userId,
       { profilePic: uploadResponse.secure_url },
       { new: true }
-    );
+    ).select("-password");
+
+    if (!updateUser) return res.status(400).json({ message: "User not found" });
 
     res.status(200).json(updateUser);
   } catch (error) {
