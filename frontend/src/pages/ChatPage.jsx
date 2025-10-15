@@ -4,9 +4,9 @@ import { useChatStore } from "../store/useChatStore";
 import ProfileHeader from "../components/ProfileHeader";
 import ActiveTabSwitch from "../components/ActiveTabSwitch";
 import ChatList from "../components/ChatList";
-import ContactList from "../components/ContactList";
 import ChatContainer from "../components/ChatContainer";
 import NoConversationPlaceholder from "../components/NoConversationPlaceholder";
+import ContactList from "../components/ContactList";
 
 const ChatPage = () => {
   const { activeTab, selectedUser } = useChatStore();

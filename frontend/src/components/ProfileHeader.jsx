@@ -51,7 +51,7 @@ const ProfileHeader = () => {
 
             <input
               type="file"
-              accept="image/*"
+              // accept="image/"
               ref={fileInputRef}
               className="hidden"
               onChange={handleImageUpload}

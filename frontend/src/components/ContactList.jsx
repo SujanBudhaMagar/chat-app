@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { useChatStore } from "../store/useChatStore";
 import UsersLoadingSkeleton from "./UsersLoadingSkeleton";
-import NoChatsFound from "./NoChatsFound";
 
-const ChatList = () => {
+const ContactList = () => {
   const { getAllContacts, allContacts, isUserLoading, setSelectedUser } =
     useChatStore();
 
@@ -12,8 +11,8 @@ const ChatList = () => {
   }, [getAllContacts]);
 
   if (isUserLoading) return <UsersLoadingSkeleton />;
-  if (contact.length === 0)
-    return <div className="text-center w-full h-full">No Contacts</div>;
+  // if (contact.length === 0)
+  //   return <div className="text-center w-full h-full">No Contacts</div>;
 
   return (
     <>
@@ -43,4 +42,4 @@ const ChatList = () => {
   );
 };
 
-export default ChatList;
+export default ContactList;
