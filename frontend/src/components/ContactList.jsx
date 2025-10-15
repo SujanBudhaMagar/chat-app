@@ -26,7 +26,7 @@ const ContactList = () => {
           <div className="flex items-center gap-3">
             <div
               className={`avatar ${
-                onlineUsers.includes(ChatList._id) ? "online" : "offline"
+                onlineUsers.includes(contact._id) ? "online" : "offline"
               }`}
             >
               {/* // socket io implementation left */}
